@@ -354,6 +354,7 @@ impl Launcher {
         })
         .detach();
         let mut settings = Settings::load();
+        settings.dev_offline = true;
         i18n::set(settings.language());
         if settings.minecraft_dir.is_none() {
             settings.minecraft_dir = backend::default_minecraft_dir();
